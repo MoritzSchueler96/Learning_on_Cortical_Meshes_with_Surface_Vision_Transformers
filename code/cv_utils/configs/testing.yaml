@@ -1,0 +1,91 @@
+# @Author: Simon Dahan
+# @Last Modified time: 2022-01-12 14:13:45
+resolution:
+  ico: 6
+  sub_ico: 2
+
+data:
+  data_path: ./code/cv_utils/data/{}/{}
+  task: alzheimer #scan_age # birth_age
+  configuration: template #template # native
+  num_classes: 3
+  log_data: False
+  log_statistics: False
+
+setup:
+  mode: testing
+  batch_size: 32
+  use_gpu: True
+  load_weights: wandb
+  architecture: tiny
+
+weights:
+  wandb:
+    xtiny: 
+    tiny: "moritzschueler96/svit/model-ce5ca_00000:best"
+    small: 
+    base: 
+  imagenet:
+    tiny: 'vit_tiny_patch16_224'
+    small: 'vit_small_patch16_224'
+    base: 'vit_base_patch16_224'
+            
+transformer:
+  xtiny:
+    dim: 96
+    depth: 12
+    heads: 2
+    mlp_dim: 384 # 4*dim according to DeiT
+    pool: 'cls'
+    dim_head: 64
+    dropout: 0.0
+    emb_dropout: 0.0
+  tiny:
+    dim: 192 #192, 384, 768
+    depth: 12 #12, 12, 12
+    heads: 3 #3, 6, 12
+    mlp_dim: 768 #768, 1536, 3072 ## 4*dim according to DeiT
+    pool: 'cls'  # or 'mean'
+    dim_head: 64 #64
+    dropout: 0.0
+    emb_dropout: 0.0
+  small:
+    dim: 384 #192, 384, 768
+    depth: 12 #12, 12, 12
+    heads: 6 #3, 6, 12
+    mlp_dim: 1536 #768, 1536, 3072 ## 4*dim according to DeiT
+    pool: 'cls'  # or 'mean'
+    dim_head: 64 #64
+    dropout: 0.0
+    emb_dropout: 0.0
+  base:
+    dim: 768 #192, 384, 768
+    depth: 12 #12, 12, 12
+    heads: 12 #3, 6, 12
+    mlp_dim: 3072 #768, 1536, 3072 ## 4*dim according to DeiT
+    pool: 'cls'  # or 'mean'
+    dim_head: 64 #64
+    dropout: 0.0
+    emb_dropout: 0.0
+  custom:
+    dim: 768 #192, 384, 768
+    depth: 12 #12, 12, 12
+    heads: 12 #3, 6, 12
+    mlp_dim: 3072 #768, 1536, 3072 ## 4*dim according to DeiT
+    pool: 'cls'  # or 'mean'
+    dim_head: 64 #64
+    dropout: 0.0
+    emb_dropout: 0.0
+
+sub_ico_0:
+    num_patches: 20
+    num_vertices: 2145 
+
+sub_ico_1:
+    num_patches: 80 
+    num_vertices: 561 
+
+sub_ico_2:
+    num_patches: 320 
+    num_vertices: 153 
+

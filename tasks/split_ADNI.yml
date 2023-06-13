@@ -1,0 +1,20 @@
+# @Author: Moritz Schüler
+# @Last Modified: 22.09.2022
+data: ./code/cv_utils/labels/ADNI_data.csv
+mandatory_columns: ["PTID","VISCODE","RID","IMAGEUID","Month","AGE","Years_bl","PTGENDER","DX"]
+split_ratio: [0.6, 0.2, 0.2]
+label:
+  AGE: numerical
+balance_columns:
+  AGE: cr(AGE, df=4)
+  PTGENDER: C(PTGENDER)
+drop_columns: null
+filter_columns: 
+  DX: "CN"
+missing_values: fill
+shuffle: True
+seed: 42
+save_folder: ./code/cv_utils/labels/ADNI/
+kwargs:
+  method: pad
+

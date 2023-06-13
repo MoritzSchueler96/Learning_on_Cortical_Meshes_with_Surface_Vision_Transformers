@@ -1,0 +1,36 @@
+# @Author: Simon Dahan
+# @Last Modified time: 2022-01-12 15:36:28
+resolution:
+  ico: 6
+  sub_ico: 2
+
+data:
+  data_path_gDL: geometric-deep-learning-benchmarking/Data/Regression/
+  data_path_ADNI: ADNI_SiT/
+  data_path_ADNI_baseline: ADNI_CSR/FS72/
+  data_path_HCP: HCP_SiT/
+  label_path: ./code/cv_utils/labels/
+  task: adult_age #scan_age #birth_age #adult_age #alzheimer #HCP_age
+  configuration: template #template #native
+  split: train #train #validation #test
+
+baseline:
+  num_slices: 3
+
+output:
+  folder: ./code/cv_utils/data/{}/{}/
+
+sub_ico_0:
+    num_patches: 20
+    num_vertices: 2145 
+
+sub_ico_1:
+    num_patches: 80 
+    num_vertices: 561 
+
+sub_ico_2:
+    num_patches: 320 
+    num_vertices: 153 
+
+
+

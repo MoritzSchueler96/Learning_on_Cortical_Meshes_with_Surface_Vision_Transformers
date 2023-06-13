@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Schüler"
+  given-names: "Moritz"
+title: "Learning on Cortical Meshes with Surface Vision Transformers (SiT)"
+version: 1.0.0
+date-released: 2023-06-15
+url: "https://github.com/MoritzSchueler96/TUM_AlzheimerPrediction"
+
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Schüler"
+    given-names: "Moritz"
+  journal: "TUM - School of Computation, Information and Technology - Informatics"
+  month: 6
+  title: "Learning on Cortical Meshes with Surface Vision Transformers (SiT)"
+  year: 2023
